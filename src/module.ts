@@ -145,7 +145,7 @@ export default defineNuxtModule<ModuleOptions>({
     if (!nuxt.options.runtimeConfig.public.supabase.url) {
       console.warn('Missing supabase url, set it either in `nuxt.config.js` or via env variable')
     }
-    if (!nuxt.options.runtimeConfig.public.supabase.key) {
+    if (!nuxt.options.runtimeConfig.supabase.key) {
       console.warn('Missing supabase anon key, set it either in `nuxt.config.js` or via env variable')
     }
 
