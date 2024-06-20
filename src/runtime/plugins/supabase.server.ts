@@ -7,7 +7,8 @@ export default defineNuxtPlugin({
   name: 'supabase',
   enforce: 'pre',
   async setup() {
-    const { url, key, cookieName, clientOptions } = useRuntimeConfig().public.supabase
+    const { key } = useRuntimeConfig().supabase
+    const { url, cookieName, clientOptions } = useRuntimeConfig().public.supabase
     const accessToken = useCookie(`${cookieName}-access-token`).value
     const refreshToken = useCookie(`${cookieName}-refresh-token`).value
 

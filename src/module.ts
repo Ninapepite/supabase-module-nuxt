@@ -128,7 +128,6 @@ export default defineNuxtModule<ModuleOptions>({
     // Public runtimeConfig
     nuxt.options.runtimeConfig.public.supabase = defu(nuxt.options.runtimeConfig.public.supabase, {
       url: options.url,
-      key: options.key,
       redirect: options.redirect,
       redirectOptions: options.redirectOptions,
       cookieName: options.cookieName,
@@ -139,6 +138,7 @@ export default defineNuxtModule<ModuleOptions>({
     // Private runtimeConfig
     nuxt.options.runtimeConfig.supabase = defu(nuxt.options.runtimeConfig.supabase, {
       serviceKey: options.serviceKey,
+      key: options.key,
     })
 
     // Make sure url and key are set
