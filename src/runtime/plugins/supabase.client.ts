@@ -9,7 +9,7 @@ export default defineNuxtPlugin({
     const currentSession = useSupabaseSession()
     const privateConfig = useRuntimeConfig().supabase
     const config = useRuntimeConfig().public.supabase
-    const { key } = privateConfig.key
+    const { key } = privateConfig
     const { url, cookieName, cookieOptions, clientOptions } = config
 
     const supabaseClient = createClient(url, key, clientOptions)
