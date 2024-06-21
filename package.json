@@ -1,6 +1,6 @@
 {
   "name": "@ninapepite/supabase-security",
-  "version": "1.2.3",
+  "version": "1.2.4",
   "description": "Supabase module for Nuxt with improved Security",
   "repository": "ninapepite/supabase-module-nuxt",
   "license": "MIT",
