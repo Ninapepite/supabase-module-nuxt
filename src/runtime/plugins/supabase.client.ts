@@ -11,7 +11,7 @@ export default defineNuxtPlugin({
     const data = await $fetch('/api/supabase-token')
     console.log('data', data)
     const key = data.key
-    console.log("Supabase client key", key)
+    console.log('Supabase client key', key)
     if (!key) {
       throw new Error('Error fetching supabase token from server')
     }
