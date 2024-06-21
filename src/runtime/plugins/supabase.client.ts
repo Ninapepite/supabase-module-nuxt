@@ -7,11 +7,16 @@ export default defineNuxtPlugin({
   enforce: 'pre',
   async setup() {
     const currentSession = useSupabaseSession()
-    const privateConfig = useRuntimeConfig().supabase
-    const config = useRuntimeConfig().public.supabase
-    const { key } = privateConfig
-    const { url, cookieName, cookieOptions, clientOptions } = config
-
+    // const privateConfig = useRuntimeConfig().supabase
+    // const config = useRuntimeConfig().public.supabase
+    // const { key } = privateConfig
+    // const { url, cookieName, cookieOptions, clientOptions } = config
+    const {
+      supabase: { key },
+      public: {
+        supabase: { url, cookieName, cookieOptions, clientOptions },
+      },
+    } = useRuntimeConfig()
     const supabaseClient = createClient(url, key, clientOptions)
 
     const accessToken = useCookie(`${cookieName}-access-token`, cookieOptions)
