@@ -10,7 +10,7 @@ export const serverSupabaseClient = async <T>(event: H3Event): Promise<SupabaseC
   const data = await $fetch('/api/supabase-token')
   console.log('data', data)
   const key = data.key
-  console.log("Runtime config !!", useRuntimeConfig())
+  console.log('Runtime config !!', useRuntimeConfig())
   const {
 
     supabase: { url, cookieName, clientOptions },
