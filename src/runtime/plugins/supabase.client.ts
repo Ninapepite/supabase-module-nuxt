@@ -10,7 +10,7 @@ export default defineNuxtPlugin({
     // const privateConfig = useRuntimeConfig().supabase
     const config = useRuntimeConfig()
     // const key = config.supabase.key
-    console.log("config lib supabase !!!", config)
+    console.log('config lib supabase !!!', config)
     const { key } = useRuntimeConfig().supabase
     const { url, cookieName, cookieOptions, clientOptions } = config.public.supabase
 
