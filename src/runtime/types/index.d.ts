@@ -12,11 +12,6 @@ declare module '@nuxt/schema' {
       clientOptions: SupabaseClientOptions<string>
     }
   }
-  interface PrivateRuntimeConfig {
-    supabase: {
-      key: string
-    }
-  }
 }
 
 export interface RedirectOptions {
