@@ -7,9 +7,6 @@ export default defineNuxtPlugin({
   name: 'supabase',
   enforce: 'pre',
   async setup() {
-    const data = await $fetch('/api/supabase-token')
-    console.log('data', data)
-    const key = data.key
     const { url, cookieName, clientOptions } = useRuntimeConfig().public.supabase
     const accessToken = useCookie(`${cookieName}-access-token`).value
     const refreshToken = useCookie(`${cookieName}-refresh-token`).value

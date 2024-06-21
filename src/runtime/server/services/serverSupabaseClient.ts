@@ -7,8 +7,13 @@ import { useRuntimeConfig } from '#imports'
 
 export const serverSupabaseClient = async <T>(event: H3Event): Promise<SupabaseClient<T>> => {
   // get settings from runtime config
+  const data = await $fetch('/api/supabase-token')
+  console.log('data', data)
+  const key = data.key
+  console.log("Runtime config !!", useRuntimeConfig())
   const {
-    supabase: { url, key, cookieName, clientOptions },
+
+    supabase: { url, cookieName, clientOptions },
   } = useRuntimeConfig().public
   let supabaseClient = event.context._supabaseClient as SupabaseClient<T>
 
