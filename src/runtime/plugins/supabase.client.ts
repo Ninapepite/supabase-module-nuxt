@@ -7,11 +7,15 @@ export default defineNuxtPlugin({
   enforce: 'pre',
   async setup() {
     const currentSession = useSupabaseSession()
-    // const privateConfig = useRuntimeConfig().supabase
     const config = useRuntimeConfig()
-    // const key = config.supabase.key
+    const { data, error } = $fetch('/api/supabase-token')
+    if (error.value) {
+      console.error('Failed to fetch Supabase token:', error.value)
+      return null
+    }
+    const key = data.value.key
     console.log('config lib supabase !!!', config)
-    const { key } = useRuntimeConfig().supabase
+    // const { key } = useRuntimeConfig().supabase
     const { url, cookieName, cookieOptions, clientOptions } = config.public.supabase
 
     const supabaseClient = createClient(url, key, clientOptions)
